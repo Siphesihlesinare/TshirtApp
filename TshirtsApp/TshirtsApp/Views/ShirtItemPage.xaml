@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TshirtsApp.ShirtItemPage" BackgroundImageSource="back1.jpg">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Tee bees" 
+               HeightRequest="150"
+               FontSize="Header"
+               FontAttributes="Bold"
+               TextColor="Azure"
+           HorizontalOptions="Center"
+               />
+        <ScrollView>
+            <StackLayout>            
+                <Grid>
+    <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition  />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+        <Label Text="Name" Grid.Row="0" Grid.Column="0" TextColor="Black" FontSize="Large"  FontAttributes="Bold"/>
+                    <Entry Grid.Row="1" Grid.Column="0" x:Name="Name_input" Text="{Binding Name}"/>
+
+                    <Label Text="Gender"  Grid.Row="0" Grid.Column="1"  TextColor="Black" FontSize="Large"  FontAttributes="Bold"/>
+                    <Entry  Grid.Row="1" Grid.Column="1" FontSize="Medium" Text="{Binding Gender}" x:Name="Gender_input" />
+
+                    <Label Text="Size"  Grid.Row="2" Grid.Column="0" TextColor="Black" FontSize="Large"  FontAttributes="Bold"/>
+                    <Entry Text="{Binding Size}" Grid.Row="3" Grid.Column="0"  x:Name="Size_input" />
+
+                    <Label Text="Date"  Grid.Row="2" Grid.Column="1" TextColor="Black" FontSize="Large"  FontAttributes="Bold"/> 
+        <DatePicker Format="D"
+                     x:Name ="Date_input"
+                    Margin="10, 0" Date="{Binding Date}" Grid.Row="3" Grid.Column="1" />
+
+                    <Label Text="Color"  Grid.Row="4" Grid.Column="0" TextColor="Black" FontSize="Large"  FontAttributes="Bold"/>
+                    <Entry Text="{Binding Color}" x:Name="Color_input " Grid.Row="5" Grid.Column="0"  />
+   
+                    <Label Text="Shipping Adress"  Grid.Row="4" Grid.Column="1" TextColor="Black" FontSize="Large"  FontAttributes="Bold"/>
+                    <Entry Text="{Binding Adress}" x:Name="Adress_input" Grid.Row="5" Grid.Column="1"  />
+
+
+  
+        </Grid>
+                <Button Text="Save"  Clicked="Save_ClickedAsync" CornerRadius="20"/>
+                <Button Text="Delete" Clicked="Delete_ClickedAsync" CornerRadius="20"/>
+                <Button Text="Cancel" Clicked="Cancel_ClickedAsync" CornerRadius="20" />
+                 
+
+           </StackLayout>
+
+        </ScrollView>
+    </StackLayout>
+
+</ContentPage>
+ 
